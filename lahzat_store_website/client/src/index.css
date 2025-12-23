@@ -1,0 +1,249 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Lato:wght@400;700&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+/* Luxury Modern Design Theme */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Luxury Modern Color Palette */
+  --primary: #1a3a52; /* Deep Navy Blue */
+  --primary-foreground: #ffffff;
+  --sidebar-primary: #1a3a52;
+  --sidebar-primary-foreground: #ffffff;
+  --chart-1: #d4af37; /* Gold */
+  --chart-2: #1a3a52;
+  --chart-3: #6b8e6f;
+  --chart-4: #8b7355;
+  --chart-5: #c9a876;
+  --radius: 0.65rem;
+  --background: #ffffff;
+  --foreground: #1a3a52;
+  --card: #ffffff;
+  --card-foreground: #1a3a52;
+  --popover: #ffffff;
+  --popover-foreground: #1a3a52;
+  --secondary: #f5f1e8; /* Cream */
+  --secondary-foreground: #1a3a52;
+  --muted: #e8e4d9;
+  --muted-foreground: #6b7280;
+  --accent: #d4af37; /* Gold */
+  --accent-foreground: #1a3a52;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #d4af37;
+  --input: #f5f1e8;
+  --ring: #1a3a52;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1a3a52;
+  --sidebar-accent: #d4af37;
+  --sidebar-accent-foreground: #1a3a52;
+  --sidebar-border: #d4af37;
+  --sidebar-ring: #1a3a52;
+}
+
+.dark {
+  --primary: #1a3a52;
+  --primary-foreground: #ffffff;
+  --sidebar-primary: #1a3a52;
+  --sidebar-primary-foreground: #ffffff;
+  --background: #0f1419;
+  --foreground: #e8e4d9;
+  --card: #1a2332;
+  --card-foreground: #e8e4d9;
+  --popover: #1a2332;
+  --popover-foreground: #e8e4d9;
+  --secondary: #2a3a4a;
+  --secondary-foreground: #d4af37;
+  --muted: #3a4a5a;
+  --muted-foreground: #a0a0a0;
+  --accent: #d4af37;
+  --accent-foreground: #1a3a52;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #d4af37;
+  --input: #2a3a4a;
+  --ring: #d4af37;
+  --chart-1: #d4af37;
+  --chart-2: #1a3a52;
+  --chart-3: #6b8e6f;
+  --chart-4: #8b7355;
+  --chart-5: #c9a876;
+  --sidebar: #1a2332;
+  --sidebar-foreground: #e8e4d9;
+  --sidebar-accent: #d4af37;
+  --sidebar-accent-foreground: #1a3a52;
+  --sidebar-border: #d4af37;
+  --sidebar-ring: #d4af37;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Lato', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  /**
+   * Custom container utility that centers content and adds responsive padding.
+   *
+   * This overrides Tailwind's default container behavior to:
+   * - Auto-center content (mx-auto)
+   * - Add responsive horizontal padding
+   * - Set max-width for large screens
+   *
+   * Usage: <div className="container">...</div>
+   *
+   * For custom widths, use max-w-* utilities directly:
+   * <div className="max-w-6xl mx-auto px-4">...</div>
+   */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* 16px - mobile padding */
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  /* Luxury Modern Design Elements */
+  .luxury-divider {
+    @apply border-t border-accent/30;
+    height: 1px;
+  }
+
+  .luxury-card {
+    @apply bg-card text-card-foreground rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+  }
+
+  .luxury-button {
+    @apply bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105;
+  }
+
+  .luxury-button-secondary {
+    @apply border-2 border-accent text-accent px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-accent hover:text-primary;
+  }
+
+  .luxury-heading {
+    @apply text-primary;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .section-divider {
+    @apply h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem; /* 32px - desktop padding */
+      padding-right: 2rem;
+      max-width: 1280px; /* Standard content width */
+    }
+  }
+}
+
+/* Smooth transitions for luxury feel */
+@layer utilities {
+  .hover-lift {
+    @apply hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out;
+  }
+
+  .text-luxury {
+    @apply text-primary;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .accent-gold {
+    @apply text-accent;
+  }
+}
